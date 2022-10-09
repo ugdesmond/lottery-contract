@@ -198,6 +198,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
                       const tx = await raffle.performUpkeep("0x")
                       const txReceipt = await tx.wait(1)
                       const startingBalance = await accounts[2].getBalance()
+                      //pass the contract address of the raffle
                       await vrfCoordinatorV2Mock.fulfillRandomWords(
                           txReceipt.events[1].args.requestId,
                           raffle.address

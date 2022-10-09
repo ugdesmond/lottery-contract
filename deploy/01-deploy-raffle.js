@@ -43,6 +43,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         networkConfig[chainId]["keepersUpdateInterval"],
     ]
 
+    console.log("=====hello world====", deployer)
+
     const raffle = await deploy("Raffle", {
         from: deployer,
         args: arguments,

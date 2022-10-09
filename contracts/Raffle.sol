@@ -59,6 +59,7 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
 
     function enterRaffle() public payable {
         if (msg.value < i_entranceFee) {
+            console.log("========msg value===", msg.value);
             revert Raffle_NotEnoughETHEntered();
         }
         if (s_raffleState == RaffleState.CALCULATING) {
